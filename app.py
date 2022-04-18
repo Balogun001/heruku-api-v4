@@ -24,12 +24,15 @@ month_map = {
 }
 
 # action_data = {
-#     "Codigo":"Codigo",
-#     "Marca":"Marca",
-#     "Medida":"Medida",
-#     "Modelo":"Modelo",
-#     "Cantidad":"Cantidad",
-#     "Precio Unitario":"Precio Unitario",
+#     "Marca1":"Marca1",
+#     "Medida1":"Medida1",
+#     "Precio1":"Precio1",
+#     "Link1":"Link1",
+#     "Marca2":"Marca2",
+#     "Medida2":"Medida2",
+#     "Precio2":"Precio2",
+#     "Link2":"Link2",
+#     "Marca3":"Marca3",
 #     "URL":"URL",
 #     "Total":"Total",
 #     "Count":"Count",
@@ -66,14 +69,17 @@ def hello_world(id):
         return jsonify({"No Data": {}, "Count": 0})
     for data in table_data:
         row_data = [d.css('a::text').get() for d in  data.css('td')]
-        data_list.append({"action": "set_field_value", "field_name": f"Codigo {count}", "value": row_data[0] or ""})
-        data_list.append({"action": "set_field_value", "field_name": f"Marca {count}", "value": row_data[1] or ""})
-        data_list.append({"action": "set_field_value", "field_name": f"Medida {count}", "value": row_data[2] or ""})
-        data_list.append({"action": "set_field_value", "field_name": f"Modelo {count}", "value": row_data[3] or ""})
-        data_list.append({"action": "set_field_value", "field_name": f"Cantidad {count}", "value": int(row_data[5]) or 0})
-        data_list.append({"action": "set_field_value", "field_name": f"Precio Unitario {count}", "value": float(row_data[6]) or 0})
-        data_list.append({"action": "set_field_value", "field_name": f"URL {count}", "value": row_data[7] or 0})
-        data_list.append({"action": "set_field_value", "field_name": f"Total {count}", "value": int(row_data[8]) or 0})
+        data_list.append({"action": "set_field_value", "field_name": f"Marca1 {count}", "value": row_data[0] or ""})
+        data_list.append({"action": "set_field_value", "field_name": f"Medida1 {count}", "value": row_data[1] or ""})
+        data_list.append({"action": "set_field_value", "field_name": f"Precio1 {count}", "value": row_data[2] or ""})
+        data_list.append({"action": "set_field_value", "field_name": f"Link1 {count}", "value": row_data[3] or ""})
+        data_list.append({"action": "set_field_value", "field_name": f"Marca2{count}", "value": int(row_data[5]) or 0})
+        data_list.append({"action": "set_field_value", "field_name": f"Medida2 {count}", "value": float(row_data[6]) or 0})
+        data_list.append({"action": "set_field_value", "field_name": f"Precio2 {count}", "value": row_data[7] or ""})
+        data_list.append({"action": "set_field_value", "field_name": f"Link2 {count}", "value": row_data[8] or ""})
+        data_list.append({"action": "set_field_value", "field_name": f"Marca3 {count}", "value": row_data[9] or ""})
+        data_list.append({"action": "set_field_value", "field_name": f"URL {count}", "value": row_data[10] or 0})
+        data_list.append({"action": "set_field_value", "field_name": f"Total {count}", "value": int(row_data[11]) or 0})
         count += 1
     
     date_format = '%Y-%m-%dT%H:%M:%S.000Z'
